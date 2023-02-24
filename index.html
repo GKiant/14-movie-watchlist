@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="normalize.css" />
+    <link rel="stylesheet" href="index.css" />
+    <title>Movie Watchlist</title>
+  </head>
+  <body>
+    <header class="header">
+      <div class="header-heading">
+        <h1>Find your film</h1>
+        <a class="watchlist-link" href="./watchlist.html">My Watchlist</a>
+      </div>
+      <label class="search-container">
+        <div class="search-icon-text">
+          <img
+            class="search-icon"
+            src="./img/search-icon.png"
+            alt="search icon"
+          />
+          <input
+            class="search-input"
+            id="search-input"
+            type="text"
+            placeholder="Blade Runner"
+          />
+        </div>
+        <button class="search-btn" id="search-btn">Search</button>
+      </label>
+    </header>
+    <main class="main-container" id="main-container">
+      <div class="empty-page">
+        <img src="./img/film-icon.png" alt="film icon" />
+        <p class="empty-page-text">Start exploring</p>
+      </div>
+      <ul class="film-list" id="film-list">
+        <li class="list-item">
+          <img src="./img/poster.png" alt="blade runner movie poster" />
+          <div class="item-description-container">
+            <div class="movie-title">
+              <h3>Blade Runner</h3>
+              <span>⭐</span>
+              <span>8.1</span>
+            </div>
+            <div class="movie-data-container">
+              <span>116 min</span>
+              <span>Drama, Mystery, Sci-Fi</span>
+              <button id="add-btn" class="add-btn">
+                <span class="add-icon"></span>
+                Watchlist
+              </button>
+            </div>
+            <p class="movie-description">
+              A blade runner must pursue and terminate four replicants who stole
+              a ship in space, and have returned to Earth to find their creator.
+            </p>
+          </div>
+        </li>
+        <li class="list-item">
+          <img src="./img/poster.png" alt="blade runner movie poster" />
+          <div class="item-description-container">
+            <div class="movie-title">
+              <h3>Blade Runner 2049</h3>
+              <span>⭐</span>
+              <span>8.0</span>
+            </div>
+            <div class="movie-data-container">
+              <span>164 min</span>
+              <span>Action, Drama, Mystery</span>
+              <button id="" class="add-btn">
+                <span class="add-icon"></span>
+                Watchlist
+              </button>
+            </div>
+            <p class="movie-description" id="movie-description">
+              Young Blade Runner K's discovery of a long-buried secret leads him
+              to track down former Blade Runner Rick Deckard, who's been
+              missin<span id="dots-1">...</span
+              ><span id="more-1" class="more">g for thirty years.</span>
+              <a
+                href="javascript:showMore(1)"
+                id="show-more-1"
+                class="show-more show"
+                >Read More</a
+              >
+              <a
+                href="javascript:showLess(1)"
+                id="show-less-1"
+                class="show-less show"
+                >Show Less</a
+              >
+            </p>
+          </div>
+        </li>
+        <li class="list-item">
+          <img src="./img/poster.png" alt="blade runner movie poster" />
+          <div class="item-description-container">
+            <div class="movie-title">
+              <h3>Blade Runner</h3>
+              <span>⭐</span>
+              <span>8.1</span>
+            </div>
+            <div class="movie-data-container">
+              <span>116 min</span>
+              <span>Drama, Mystery, Sci-Fi</span>
+              <button id="" class="add-btn">
+                <span class="add-icon"></span>
+                Watchlist
+              </button>
+            </div>
+            <p class="movie-description">
+              A blade runner must pursue and terminate four replicants who stole
+              a ship in space, and have returned to Earth to find their creator.
+              Then he would l<span id="dots-2">...</span
+              ><span id="more-2" class="more"
+                >ike to drink a cup a coffee. He loves coffee and he refuses to
+                skip even a single cup.
+              </span>
+              <a
+                href="javascript:showMore(2)"
+                id="show-more-2"
+                class="show-more show"
+                >Read More</a
+              >
+              <a
+                href="javascript:showLess(2)"
+                id="show-less-2"
+                class="show-less show"
+                >Show Less</a
+              >
+            </p>
+          </div>
+        </li>
+      </ul>
+    </main>
+
+    <script src="index.js"></script>
+  </body>
+</html>
