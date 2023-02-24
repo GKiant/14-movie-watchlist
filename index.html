@@ -20,25 +20,27 @@
         <h1>Find your film</h1>
         <a class="watchlist-link" href="./watchlist.html">My Watchlist</a>
       </div>
-      <label class="search-container">
-        <div class="search-icon-text">
-          <img
-            class="search-icon"
-            src="./img/search-icon.png"
-            alt="search icon"
-          />
-          <input
-            class="search-input"
-            id="search-input"
-            type="text"
-            placeholder="Blade Runner"
-          />
-        </div>
-        <button class="search-btn" id="search-btn">Search</button>
-      </label>
+      <form id="search-form" action="submit">
+        <label class="search-container">
+          <div class="search-icon-text">
+            <img
+              class="search-icon"
+              src="./img/search-icon.png"
+              alt="search icon"
+            />
+            <input
+              class="search-input"
+              id="search-input"
+              type="text"
+              placeholder="Blade Runner"
+            />
+          </div>
+          <button class="search-btn" id="search-btn">Search</button>
+        </label>
+      </form>
     </header>
     <main class="main-container" id="main-container">
-      <div class="empty-page" id="empty-page">
+      <div class="empty-page empty" id="empty-page">
         <img src="./img/film-icon.png" alt="film icon" />
         <p class="empty-page-text">Start exploring</p>
       </div>
@@ -47,6 +49,6 @@
       </ul>
     </main>
 
-    <script src="index.js"></script>
+    <script src="./js/index.js" type="module"></script>
   </body>
 </html>

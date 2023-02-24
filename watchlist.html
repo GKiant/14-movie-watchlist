@@ -24,7 +24,21 @@
           </div>
         </div>
       </header>
+      <main class="main-container" id="watchlist-main">
+        <div class="empty-watchlist empty" id="empty-watchlist">
+          <p class="empty-page-text">
+            Your watchlist is looking a little empty...
+          </p>
+          <button class="add-btn" id="">
+            <span class="add-icon add-icon-watchlist"></span>
+            <a href="./index.html">Let's add some movies!</a>
+          </button>
+        </div>
+        <ul class="film-list" id="watchlist-list">
+          <!-- FILM LIST RENDERS HERE -->
+        </ul>
+      </main>
     </div>
-    <script src="index.js"></script>
+    <script src="./js/watchlist.js" type="module"></script>
   </body>
 </html>

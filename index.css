@@ -16,7 +16,8 @@ body {
 .list-item,
 .movie-title,
 .movie-data-container,
-.watchlist-btn-container {
+.watchlist-btn-container,
+.not-found-container {
   display: flex;
 }
 
@@ -35,6 +36,11 @@ body {
 
 a {
   text-decoration: none;
+  color: white;
+}
+
+a:hover {
+  color: aquamarine;
 }
 
 h1 {
@@ -66,9 +72,13 @@ h1 {
   }
 }
 
-.search-container {
+form {
   width: 81%;
   align-self: center;
+}
+
+.search-container {
+  width: 100%;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -123,7 +133,7 @@ h1 {
 }
 
 .main-container,
-.empty-page {
+.empty {
   flex-direction: column;
   align-items: center;
 }
@@ -134,10 +144,14 @@ h1 {
   width: 100%;
 }
 
-.empty-page {
+.empty {
   display: flex;
   justify-content: center;
   height: 100%;
+}
+
+.empty-page-text {
+  margin: 1em 0 1em 0;
 }
 
 .film-list {
@@ -177,14 +191,16 @@ h3 {
   font-size: 0.75rem;
 }
 
-.add-btn {
+.add-btn,
+.remove-btn {
   display: flex;
   background-color: transparent;
   color: white;
   border: none;
 }
 
-.add-icon {
+.add-icon,
+.remove-icon {
   display: inline-block;
   width: 16px;
   height: 16px;
@@ -194,7 +210,12 @@ h3 {
   transform: translateY(-1px);
 }
 
-.add-icon::before {
+.add-icon-watchlist {
+  transform: translateY(1px);
+}
+
+.add-icon::before,
+.remove-icon:before {
   content: '+';
   display: flex;
   flex-direction: row;
@@ -208,14 +229,28 @@ h3 {
   color: black;
 }
 
+.remove-icon:before {
+  content: '-';
+}
+
 .add-btn:hover {
   background-color: black;
   color: limegreen;
   cursor: pointer;
 }
 
+.remove-btn:hover {
+  background-color: black;
+  color: red;
+  cursor: pointer;
+}
+
 .add-btn:active {
   color: aquamarine;
+}
+
+.remove-btn:active {
+  color: orange;
 }
 
 .movie-description {
@@ -235,4 +270,16 @@ h3 {
 
 .show-less {
   display: none;
+}
+
+.not-found-container {
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  margin-top: 8em;
+}
+
+.not-found {
+  align-self: center;
+  max-width: 300px;
 }
