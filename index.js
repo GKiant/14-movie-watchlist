@@ -1,5 +1,4 @@
 const searchInput = document.getElementById('search-input');
-const mainContainer = document.getElementById('main-container');
 const filmList = document.getElementById('film-list');
 
 const showMore = (id) => {
@@ -24,12 +23,13 @@ const addShowMore = (text, id) => {
   const hiddenText = text.slice(111);
 
   return `${showText}<span id="dots-${id}">...</span><span id="more-${id}" class="more">${hiddenText}</span>
-    <a href="javascript:showMore('${id}')" id="show-more-${id}" class="show-more show">Read More</a>
-    <a href="javascript:showLess('${id}')" id="show-less-${id}" class="show-less show">Show Less</a>
+    <a onclick="showMore('${id}')" id="show-more-${id}" class="show-more show">Read More</a>
+    <a onclick="showLess('${id}')" id="show-less-${id}" class="show-less show">Show Less</a>
   `;
 };
 
 document.getElementById('search-btn').addEventListener('click', async () => {
+  document.getElementById('empty-page').style.display = 'none';
   filmList.innerHTML = '';
   const res = await fetch(
     `http://www.omdbapi.com/?apikey=dd5e241f&s=${searchInput.value}`
@@ -62,12 +62,11 @@ document.getElementById('search-btn').addEventListener('click', async () => {
 const getFilmHtml = (title, id, poster, rating, runtime, genre, plot) => {
   return `
     <li class="list-item">
-      <img src="${poster}" alt="${title} movie poster" width="99px" />
+      <img src="${poster}" alt="${title} movie poster" width="99px" height="100%" />
       <div class="item-description-container">
         <div class="movie-title">
           <h3>${title}</h3>
-          <span>⭐</span>
-          <span>${rating}</span>
+          <span class="rating-text"> ⭐ ${rating}</span>
         </div>
         <div class="movie-data-container">
           <span>${runtime}</span>

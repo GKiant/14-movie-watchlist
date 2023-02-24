@@ -135,7 +135,7 @@ h1 {
 }
 
 .empty-page {
-  display: none;
+  display: flex;
   justify-content: center;
   height: 100%;
 }
@@ -158,7 +158,17 @@ h1 {
 }
 
 .movie-title {
-  align-items: center;
+  align-items: baseline;
+}
+
+h3 {
+  display: inline-block;
+  padding: 0;
+  margin: 0 0.5em 0.7em 0;
+}
+
+.rating-text {
+  font-size: 0.75rem;
 }
 
 .movie-data-container {
@@ -220,6 +230,7 @@ h1 {
 .show {
   text-decoration: none;
   color: white;
+  cursor: pointer;
 }
 
 .show-less {
