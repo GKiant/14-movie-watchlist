@@ -11,7 +11,6 @@ const renderWatchlistPage = () => {
   if (updatedWatchlist.length) {
     emptyWatchlist.style.display = 'none';
     for (let movie of updatedWatchlist) {
-      console.log(movie);
       document.getElementById('watchlist-list').innerHTML += getFilmHtml(
         movie.title,
         movie.id,
@@ -36,7 +35,6 @@ watchlistContainer.addEventListener('click', (e) => {
   if (e.target.className === 'remove-btn') {
     const imdbId = e.target.id.slice(11);
     updatedWatchlist = updatedWatchlist.filter((film) => film.id !== imdbId);
-    console.log(updatedWatchlist);
     setStorage(updatedWatchlist);
     renderWatchlistPage();
   }

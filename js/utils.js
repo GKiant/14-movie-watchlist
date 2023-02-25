@@ -1,5 +1,3 @@
-import { watchlist } from './index.js';
-
 const addBtnData = {
   id: 'add-btn-',
   class: 'add-btn',
@@ -17,6 +15,34 @@ const removeBtnData = {
 const setStorage = (source) => {
   const sendJSON = JSON.stringify(source);
   localStorage.setItem('movies', sendJSON);
+};
+
+const showMore = (id) => {
+  document.getElementById(`show-more-${id}`).style.display = 'none';
+  document.getElementById(`dots-${id}`).style.display = 'none';
+
+  document.getElementById(`show-less-${id}`).style.display = 'inline';
+  document.getElementById(`more-${id}`).style.display = 'inline';
+};
+
+const showLess = (id) => {
+  document.getElementById(`show-less-${id}`).style.display = 'none';
+  document.getElementById(`more-${id}`).style.display = 'none';
+
+  document.getElementById(`show-more-${id}`).style.display = 'inline';
+  document.getElementById(`dots-${id}`).style.display = 'inline';
+};
+
+const addShowMore = (text, id) => {
+  const showText = text.slice(0, 111);
+  const hiddenText = text.slice(111);
+
+  const descriptionHtml = `${showText}<span id="dots-${id}">...</span><span id="more-${id}" class="more">${hiddenText}</span>
+    <a id="show-more-${id}" class="show-more show">Read More</a>
+    <a id="show-less-${id}" class="show-less show">Show Less</a>
+  `;
+
+  return descriptionHtml;
 };
 
 const getFilmHtml = (
@@ -46,13 +72,18 @@ const getFilmHtml = (
           </button>
         </div>
         <p class="movie-description">
-           ${plot}
+          ${plot.length > 110 ? addShowMore(plot, id) : plot}
         </p>
       </div>
     </li>
   `;
 };
 
-// ${plot.length > 110 ? addShowMore(plot, id) :
-
-export { addBtnData, removeBtnData, getFilmHtml, setStorage };
+export {
+  addBtnData,
+  removeBtnData,
+  getFilmHtml,
+  setStorage,
+  showMore,
+  showLess,
+};
